@@ -1,0 +1,61 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MyMaster.Master.cs" Inherits="ASP_Project.My" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title> Library Management</title>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <script src="Scripts/jquery-3.0.0.js"></script>
+    <script src="Scripts/jquery-3.0.0.min.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body >
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+        </asp:ScriptManager>
+       
+                 <nav class="navbar navbar-expand-lg navbar-light bg-info ">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand">Ammrin Library</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="navbar-nav nav " >
+                        <li><a href="/" class="nav-link text-white">Home</a></li>
+                        <li><a href="Book_Category.aspx" class="nav-link text-white">Book Category</a></li>
+                        <li><a href="BookEntry.aspx" class="nav-link text-white">Book List</a></li>
+                        <li><a href="Report/ReportBook.aspx" class="nav-link text-white">Report</a></li>
+                        
+                    </ul>
+
+                </div>
+                <div class="navbar navbar-right">
+                    <asp:LoginView ID="LoginView1" runat="server">
+                        <AnonymousTemplate>
+                            <ul class="navbar-nav">
+                                <li><a href="Login.aspx" class="nav-link">Login</a></li>
+                                <li><a href="Register.aspx" class="nav-link">Register</a></li>
+                            </ul>
+                        </AnonymousTemplate>
+                        <LoggedInTemplate>
+                            <%--<asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="false" OnClick="LinkButton1_Click">Logout</asp:LinkButton>--%>
+                        </LoggedInTemplate>
+                    </asp:LoginView>
+                </div>
+
+            </div>
+        </nav>
+        
+       
+        <div class="container">
+            <asp:ContentPlaceHolder ID="mainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+    <script src="Scripts/bootstrap.js"></script>
+</body>
+</html>
